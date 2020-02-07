@@ -1,12 +1,6 @@
-const nodemailer = require("nodemailer");
+const sgMail = require("@sendgrid/mail");
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: "ide.johnc@gmail.com",
-    pass: process.env.EMAIL_PASSWORD
-  }
-});
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const toAndFrom = {
   from: "ide.johnc@gmail.com",
@@ -24,7 +18,7 @@ Current price: $${price}
 URL: ${url}`
   };
 
-  await transporter.sendMail(mailOptions);
+  await sgMail.send(mailOptions);
 }
 
 async function priceUpdateEmail(name, url, newPrice, oldPrice, lowestPrice) {
@@ -45,7 +39,7 @@ ${
 URL: ${url}`
   };
 
-  await transporter.sendMail(mailOptions);
+  await sgMail.send(mailOptions);
 }
 
 async function sendRanEmail() {
@@ -56,7 +50,7 @@ async function sendRanEmail() {
       "Product watcher has ran. You are receiving this email as a notification that this service is working correctly."
   };
 
-  await transporter.sendMail(mailOptions);
+  await sgMail.send(mailOptions);
 }
 
 module.exports = {

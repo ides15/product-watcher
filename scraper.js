@@ -3,8 +3,18 @@ const cheerio = require("cheerio");
 const url = require("url");
 const moment = require("moment");
 
+const chromeUserAgent =
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36";
+
 async function fetchData(url) {
-  const result = await axios.get(url);
+  const result = await axios({
+    method: "GET",
+    url
+    // headers: {
+    //   "User-Agent": chromeUserAgent
+    // }
+  });
+
   console.log(result.status);
   return cheerio.load(result.data);
 }
