@@ -102,7 +102,6 @@ async function checkProducts() {
         );
       } else {
         console.log("Same price.");
-        // await email.sendRanEmail();
         // await email.priceUpdateEmail(
         //   product.name,
         //   product.url,
@@ -121,6 +120,8 @@ async function checkProducts() {
       );
     }
   });
+
+  await email.sendRanEmail();
 }
 
 (async function() {

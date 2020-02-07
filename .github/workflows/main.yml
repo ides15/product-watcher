@@ -1,6 +1,9 @@
 name: CI
 
-on: [push, repository_dispatch]
+on:
+  repository_dispatch:
+  schedule:
+    - cron: "0,30 * * * *"
 
 jobs:
   product-watcher:
