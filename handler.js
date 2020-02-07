@@ -121,7 +121,7 @@ async function checkProducts() {
     }
   });
 
-  await email.sendRanEmail();
+  // await email.sendRanEmail();
 }
 
 (async function() {
