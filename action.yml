@@ -1,0 +1,5 @@
+name: Product Watcher
+description: Run product watcher on inputs
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
