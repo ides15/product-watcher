@@ -19,3 +19,8 @@ jobs:
       - name: Docker run step
         uses: ./
         id: product-watcher
+        env:
+          NODE_ENV: production
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
