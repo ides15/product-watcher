@@ -79,6 +79,7 @@ async function checkProducts() {
     console.log(`Found details for ${product.name}:`);
     console.log(scrapedProduct);
 
+    const lowestPrice = Math.min(...savedProduct.history.map(h => h.price));
     const history = savedProduct.history;
     const length = history.length;
 
@@ -89,20 +90,31 @@ async function checkProducts() {
         history.push(scrapedProduct);
 
         await s3.saveProduct(product.name, product.url, history);
-        await email.sendEmail(
+        await email.priceUpdateEmail(
           product.name,
           product.url,
           scrapedProduct.price,
-          history[length - 1].price
+          history[length - 1].price,
+          lowestPrice
         );
       } else {
         console.log("Same price.");
-        // await email.sendRanEmail();
+        // await email.priceUpdateEmail(
+        //   product.name,
+        //   product.url,
+        //   scrapedProduct.price,
+        //   history[length - 1].price,
+        //   lowestPrice
+        // );
       }
     } else {
       console.log("No existing history, adding to history.");
       await s3.saveProduct(product.name, product.url, [scrapedProduct]);
-      await email.sendEmail(product.name, product.url, scrapedProduct.price);
+      await email.startedTrackingEmail(
+        product.name,
+        product.url,
+        scrapedProduct.price
+      );
     }
   });
 }

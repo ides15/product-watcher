@@ -1,0 +1,1 @@
+/usr/local/bin/docker build --no-cache -t product-watcher .

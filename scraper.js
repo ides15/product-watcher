@@ -5,6 +5,7 @@ const moment = require("moment");
 
 async function fetchData(url) {
   const result = await axios.get(url);
+  console.log(result.status);
   return cheerio.load(result.data);
 }
 

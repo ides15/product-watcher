@@ -8,23 +8,41 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-async function sendEmail(name, url, newPrice, oldPrice) {
-  const newHistoryEmail = {
-    subject: `Product Watcher - ${name} is being tracked`,
-    text: `You have started watching the ${name}.\n\nCurrent price: $${newPrice}\n\nURL: ${url}`
-  };
+const toAndFrom = {
+  from: "ide.johnc@gmail.com",
+  to: "ide.johnc@gmail.com"
+};
 
-  const existingHistoryEmail = {
-    subject: `Product Watcher - ${name} price changed`,
-    text: `The price of the ${name} has changed.\n\nOld price: $${oldPrice}\n\nCurrent price: $${newPrice}\n\nURL: ${url}`
-  };
-
-  const contents = oldPrice ? existingHistoryEmail : newHistoryEmail;
-
+async function startedTrackingEmail(name, url, price) {
   const mailOptions = {
-    from: "ide.johnc@gmail.com",
-    to: "ide.johnc@gmail.com",
-    ...contents
+    ...toAndFrom,
+    subject: `Product Watcher - ${name} is being tracked`,
+    text: `You have started watching the ${name}.
+
+Current price: $${price}
+
+URL: ${url}`
+  };
+
+  await transporter.sendMail(mailOptions);
+}
+
+async function priceUpdateEmail(name, url, newPrice, oldPrice, lowestPrice) {
+  const mailOptions = {
+    ...toAndFrom,
+    subject: `Product Watcher - ${name} price changed`,
+    text: `The price of the ${name} has changed.
+
+Old price: $${oldPrice}
+Current price: $${newPrice}
+
+Lowest tracked price: $${lowestPrice}
+${
+  lowestPrice >= newPrice
+    ? "This is the lowest price this product has been seen since you started tracking it!\n"
+    : ""
+}
+URL: ${url}`
   };
 
   await transporter.sendMail(mailOptions);
@@ -32,8 +50,7 @@ async function sendEmail(name, url, newPrice, oldPrice) {
 
 async function sendRanEmail() {
   const mailOptions = {
-    from: "ide.johnc@gmail.com",
-    to: "ide.johnc@gmail.com",
+    ...toAndFrom,
     subject: "Product Watcher",
     text:
       "Product watcher has ran. You are receiving this email as a notification that this service is working correctly."
@@ -43,6 +60,7 @@ async function sendRanEmail() {
 }
 
 module.exports = {
-  sendEmail,
+  startedTrackingEmail,
+  priceUpdateEmail,
   sendRanEmail
 };
