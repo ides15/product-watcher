@@ -1,5 +1,5 @@
 FROM node:12
 
-COPY . .
+COPY scraper .
 
-CMD ["node", "./scraper/handler.js"]
+CMD ["node", "handler.js"]
