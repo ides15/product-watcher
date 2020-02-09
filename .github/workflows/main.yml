@@ -9,6 +9,8 @@ jobs:
   product-watcher:
     runs-on: ubuntu-latest
     name: Build and run product-watcher
+    env:
+      working-directory: ./scraper
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -17,11 +19,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "12.x"
+        working-directory: ${{env.working-directory}}
       - run: npm install
 
       - name: Docker run step
         uses: ./
         id: product-watcher
+        working-directory: ${{env.working-directory}}
         env:
           NODE_ENV: production
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
