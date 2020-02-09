@@ -8,7 +8,7 @@ AWS.config.update({
 
 const s3 = new AWS.S3({ apiVersion: "2006-03-01" });
 
-const productsBucketName = "product-watcher";
+const productsBucketName = "product-watcher-v2";
 
 async function doesBucketExist() {
   const headParams = {
@@ -46,13 +46,13 @@ async function doesProductExist(name) {
   }
 }
 
-async function saveProduct(name, url, history = []) {
+async function saveProduct(name, urls, history = []) {
   const uploadParams = {
     Bucket: productsBucketName,
     Key: `${name}.json`,
     Body: JSON.stringify({
       name,
-      url,
+      urls,
       history
     })
   };

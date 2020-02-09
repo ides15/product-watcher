@@ -1,42 +1,47 @@
 const sgMail = require("@sendgrid/mail");
+const url = require("url");
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const toAndFrom = {
-  from: "ide.johnc@gmail.com",
+  from: "product-watcher@johnide.dev",
   to: "ide.johnc@gmail.com"
 };
 
-async function startedTrackingEmail(name, url, price) {
+async function startedTrackingEmail(name) {
   const mailOptions = {
     ...toAndFrom,
     subject: `Product Watcher - ${name} is being tracked`,
-    text: `You have started watching the ${name}.
-
-Current price: $${price}
-
-URL: ${url}`
+    text: `You have started watching the ${name}.`
   };
 
   await sgMail.send(mailOptions);
 }
 
-async function priceUpdateEmail(name, url, newPrice, oldPrice, lowestPrice) {
+async function priceUpdateEmail(
+  name,
+  productUrl,
+  newPrice,
+  oldPrice,
+  lowestPrice
+) {
+  const source = url.parse(productUrl, true);
+
   const mailOptions = {
     ...toAndFrom,
-    subject: `Product Watcher - ${name} price changed`,
-    text: `The price of the ${name} has changed.
+    subject: `Product Watcher - ${name} price changed on ${source.host}`,
+    text: `The price of the ${name} has changed on ${source.host}.
 
 Old price: $${oldPrice}
 Current price: $${newPrice}
 
-Lowest tracked price: $${lowestPrice}
+Lowest overall tracked price: $${lowestPrice}
 ${
   lowestPrice >= newPrice
     ? "This is the lowest price this product has been seen since you started tracking it!\n"
     : ""
 }
-URL: ${url}`
+URL: ${productUrl}`
   };
 
   await sgMail.send(mailOptions);

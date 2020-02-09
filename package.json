@@ -1,10 +1,9 @@
 {
-  "name": "scraper",
-  "version": "1.0.0",
+  "name": "product-watcher",
+  "version": "2.0.0",
   "description": "",
   "main": "handler.js",
-  "keywords": [],
-  "author": "",
+  "author": "John Ide <ide.johnc@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "@sendgrid/mail": "^6.5.2",

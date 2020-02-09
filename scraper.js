@@ -24,39 +24,40 @@ async function getProductInfo(productURL) {
 
   const source = url.parse(productURL, true);
 
-  let product = {};
+  let price;
 
   switch (source.host) {
     case "www.amazon.com": {
-      product = amazon($);
+      price = amazon($);
       break;
     }
     case "www.bestbuy.com": {
-      product = bestBuy($);
+      price = bestBuy($);
       break;
     }
     default:
       throw Error(`host scraping not implemented: ${source.host}`);
   }
 
-  return product;
+  return {
+    date: moment().toString(),
+    url: productURL,
+    price
+  };
 }
 
 function amazon($) {
-  const product = {
-    date: moment().toString(),
-    price: null
-  };
+  let price;
 
-  product.price = parseFloat(
+  price = parseFloat(
     $("#priceblock_ourprice")
       .text()
       .substring(1)
       .replace(",", "")
   );
 
-  if (isNaN(product.price)) {
-    product.price = parseFloat(
+  if (isNaN(price)) {
+    price = parseFloat(
       $("#priceblock_saleprice")
         .text()
         .substring(1)
@@ -64,23 +65,20 @@ function amazon($) {
     );
   }
 
-  return product;
+  return price;
 }
 
 function bestBuy($) {
-  const product = {
-    date: moment().toString(),
-    price: null
-  };
+  let price;
 
-  product.price = parseFloat(
+  price = parseFloat(
     $(".priceView-hero-price > span:first-child")
       .text()
       .substring(1)
       .replace(",", "")
   );
 
-  return product;
+  return price;
 }
 
 module.exports = {
