@@ -1,5 +1,7 @@
 FROM node:12
 
-COPY scraper .
+COPY . .
 
-CMD ["node", "handler.js"]
+RUN ["env"]
+
+CMD ["node", "./scraper/handler.js"]
