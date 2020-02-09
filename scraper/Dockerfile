@@ -2,4 +2,4 @@ FROM node:12
 
 COPY . .
 
-CMD ["node", "handler.js"]
+CMD ["node", "./scraper/handler.js"]
