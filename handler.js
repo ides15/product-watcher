@@ -113,9 +113,6 @@ async function checkProducts() {
       })
     );
 
-    console.log("Ending history:");
-    console.log(history);
-
     await s3.saveProduct(product.name, product.urls, history);
   });
 
