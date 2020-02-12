@@ -4,10 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/credentials"
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/s3"
+	"github.com/ides15/product-watcher/api/services"
 	"github.com/joho/godotenv"
 )
 
@@ -17,23 +14,35 @@ func main() {
 		log.Fatal("Error loading .env file")
 	}
 
-	sess, err := session.NewSession(&aws.Config{
-		Credentials: credentials.NewEnvCredentials(),
-		Region:      aws.String("us-east-1")},
-	)
-
-	// Create S3 service client
-	svc := s3.New(sess)
-
-	result, err := svc.ListBuckets(nil)
+	s3, err := services.NewS3Client()
 	if err != nil {
-		fmt.Errorf("Unable to list buckets, %v", err)
+		log.Fatal(err)
 	}
 
-	fmt.Println("Buckets:")
+	// // List objects in bucket
+	// objects, err := s3.ListObjects()
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 
-	for _, b := range result.Buckets {
-		fmt.Printf("* %s created on %s\n",
-			aws.StringValue(b.Name), aws.TimeValue(b.CreationDate))
+	// for _, obj := range objects {
+	// 	log.Println(obj)
+	// }
+
+	// Get single product
+	product, err := s3.GetProduct("LG OLED C9 65")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(product.Name)
+	fmt.Println(product.URLs)
+	fmt.Println()
+
+	for _, history := range product.History {
+		fmt.Println(history.Date)
+		fmt.Println(history.Price)
+		fmt.Println(history.URL)
+		fmt.Println()
 	}
 }
