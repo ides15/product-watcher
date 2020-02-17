@@ -88,13 +88,15 @@ async function checkProducts() {
 
               history.push(scrapedProduct);
 
-              await email.priceUpdateEmail(
-                product.name,
-                url,
-                scrapedProduct.price,
-                lastHistoryForUrl.price,
-                lowestPrice
-              );
+              if (lowestPrice >= scrapedProduct.price) {
+                await email.priceUpdateEmail(
+                  product.name,
+                  url,
+                  scrapedProduct.price,
+                  lastHistoryForUrl.price,
+                  lowestPrice
+                );
+              }
             } else {
               console.log("Same price.");
             }
