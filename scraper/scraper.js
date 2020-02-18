@@ -56,13 +56,17 @@ function amazon($) {
       .replace(",", "")
   );
 
-  if (isNaN(price)) {
+  if (Number.isNaN(price)) {
     price = parseFloat(
       $("#priceblock_saleprice")
         .text()
         .substring(1)
         .replace(",", "")
     );
+  }
+
+  if (Number.isNaN(price) || price === null) {
+    throw new Error(`price was not scraped successfully: ${price}`);
   }
 
   return price;
@@ -78,8 +82,20 @@ function bestBuy($) {
       .replace(",", "")
   );
 
+  if (Number.isNaN(price) || price === null) {
+    throw new Error(`price was not scraped successfully: ${price}`);
+  }
+
   return price;
 }
+
+(async () => {
+  console.log(
+    await getProductInfo(
+      "https://www.bestbuy.com/site/lg-55-class-oled-b9-series-2160p-smart-4k-uhd-tv-with-hdr/6360612.p?skuId=6360612"
+    )
+  );
+})();
 
 module.exports = {
   getProductInfo
