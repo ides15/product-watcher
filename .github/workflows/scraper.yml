@@ -3,7 +3,7 @@ name: scraper
 on:
   repository_dispatch:
   schedule:
-    - cron: "0,30 * * * *"
+    - cron: "* */2 * * *"
 
 jobs:
   product-watcher:
