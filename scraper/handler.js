@@ -41,6 +41,27 @@ const products = [
       "https://www.bestbuy.com/site/logitech-4k-pro-webcam/5761912.p?skuId=5761912",
       "https://www.amazon.com/Logitech-BRIO-Conferencing-Recording-Streaming/dp/B01N5UOYC4/ref=sr_1_1?keywords=logitech+4k+webcam&qid=1580760632&sr=8-1"
     ]
+  },
+  {
+    name: "Sony a6400 with 18-135mm",
+    urls: [
+      "https://www.amazon.com/Sony-a6500-Mirrorless-Camera-18-135mm/dp/B07BV4CBC1/ref=sr_1_10?keywords=a6400&qid=1582519043&sr=8-10",
+      "https://www.bestbuy.com/site/sony-alpha-a6400-mirrorless-camera-with-e-18-135mm-f-3-5-5-6-oss-lens-black/6324859.p?skuId=6324859"
+    ]
+  },
+  {
+    name: "Sony a6400 just body",
+    urls: [
+      "https://www.bestbuy.com/site/sony-alpha-a6400-mirrorless-camera-body-only-black/6324856.p?skuId=6324856",
+      "https://www.amazon.com/Sony-Alpha-a6400-Mirrorless-Camera/dp/B07MTWVN3M/ref=sr_1_3?keywords=a6400&qid=1582519043&sr=8-3"
+    ]
+  },
+  {
+    name: "Sony a6400 with 16-50mm",
+    urls: [
+      "https://www.bestbuy.com/site/sony-alpha-a6400-mirrorless-camera-with-e-pz-16-50mm-f-3-5-5-6-oss-lens-black/6324858.p?skuId=6324858",
+      "https://www.amazon.com/Sony-Alpha-a6400-Mirrorless-Camera/dp/B07MV3P7M8/ref=sr_1_6?keywords=a6400+16&qid=1582519083&sr=8-6"
+    ]
   }
 ];
 
