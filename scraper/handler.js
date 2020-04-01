@@ -62,6 +62,27 @@ const products = [
       "https://www.bestbuy.com/site/sony-alpha-a6400-mirrorless-camera-with-e-pz-16-50mm-f-3-5-5-6-oss-lens-black/6324858.p?skuId=6324858",
       "https://www.amazon.com/Sony-Alpha-a6400-Mirrorless-Camera/dp/B07MV3P7M8/ref=sr_1_6?keywords=a6400+16&qid=1582519083&sr=8-6"
     ]
+  },
+  {
+    name: "Airpods with Charging Case",
+    urls: [
+      "https://www.bestbuy.com/site/apple-airpods-with-charging-case-latest-model-white/6084400.p?skuId=6084400",
+      "https://www.amazon.com/Apple-AirPods-Charging-Latest-Model/dp/B07PXGQC1Q/ref=sr_1_1_sspa?keywords=airpods&qid=1585770978&sr=8-1-spons&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFOU01SS1ZGR0tXQzMmZW5jcnlwdGVkSWQ9QTAyNzM4NzQzSEFPRktSV042OFE1JmVuY3J5cHRlZEFkSWQ9QTEwMDQ4NzBEQkJVSkxXUVYyT0wmd2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl&th=1"
+    ]
+  },
+  {
+    name: "Airpods with Wireless Charging Case",
+    urls: [
+      "https://www.bestbuy.com/site/apple-airpods-with-wireless-charging-case-latest-model-white/6083595.p?skuId=6083595",
+      "https://www.amazon.com/Apple-AirPods-Charging-Latest-Model/dp/B07PYLT6DN/ref=sr_1_1_sspa?keywords=airpods&qid=1585770978&sr=8-1-spons&th=1"
+    ]
+  },
+  {
+    name: "Airpods Pro",
+    urls: [
+      "https://www.bestbuy.com/site/apple-airpods-pro-white/5706659.p?skuId=5706659",
+      "https://www.amazon.com/Apple-MWP22AM-A-AirPods-Pro/dp/B07ZPC9QD4/ref=sr_1_2_sspa?keywords=airpods&qid=1585770978&sr=8-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFOU01SS1ZGR0tXQzMmZW5jcnlwdGVkSWQ9QTAyNzM4NzQzSEFPRktSV042OFE1JmVuY3J5cHRlZEFkSWQ9QTAwMDU0MTQzUkVZU1c4M0hVWkIzJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ=="
+    ]
   }
 ];
 
