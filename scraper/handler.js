@@ -83,6 +83,13 @@ const products = [
       "https://www.bestbuy.com/site/apple-airpods-pro-white/5706659.p?skuId=5706659",
       "https://www.amazon.com/Apple-MWP22AM-A-AirPods-Pro/dp/B07ZPC9QD4/ref=sr_1_2_sspa?keywords=airpods&qid=1585770978&sr=8-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFOU01SS1ZGR0tXQzMmZW5jcnlwdGVkSWQ9QTAyNzM4NzQzSEFPRktSV042OFE1JmVuY3J5cHRlZEFkSWQ9QTAwMDU0MTQzUkVZU1c4M0hVWkIzJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ=="
     ]
+  },
+  {
+    name: "Nintendo Switch",
+    urls: [
+      "https://www.bestbuy.com/site/nintendo-switch-32gb-console-neon-red-neon-blue-joy-con/6364255.p?skuId=6364255",
+      "https://www.amazon.com/Nintendo-Switch-Neon-Blue-Joy%E2%80%91/dp/B07VGRJDFY/ref=sr_1_1?dchild=1&keywords=switch&qid=1585858811&sr=8-1&th=1"
+    ]
   }
 ];
 
