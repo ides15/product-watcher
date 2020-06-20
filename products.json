@@ -1,0 +1,115 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "name": "Sony a6400 18-135mm",
+      "active": true,
+      "urls": [
+        {
+          "id": 0,
+          "url": "https://www.amazon.com/Sony-Mirrorless-Digital-Bundles-18-135mm/dp/B07PYQ2TMN/ref=sr_1_1_sspa?dchild=1&keywords=a6400&qid=1592617600&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExMEhPREEyR05JNjhKJmVuY3J5cHRlZElkPUExMDM4MDEyV0dIVVNIRjFIQ1VMJmVuY3J5cHRlZEFkSWQ9QTA1NTgwNjVWSlZSNzQ5R1dNNjcmd2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl",
+          "selector": "#priceblock_saleprice",
+          "company": {
+            "id": 0,
+            "name": "Amazon"
+          }
+        },
+        {
+          "id": 7,
+          "url": "https://www.bestbuy.com/site/sony-alpha-a6400-mirrorless-4k-video-camera-with-e-18-135mm-f-3-5-5-6-oss-lens-black/6324859.p?skuId=6324859",
+          "selector": ".priceView-hero-price.priceView-customer-price",
+          "company": {
+            "id": 2,
+            "name": "Best Buy"
+          }
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": 1,
+      "name": "Lightech Clutch Lever",
+      "active": true,
+      "urls": [
+        {
+          "id": 1,
+          "url": "https://www.lightechuk.com/lightech-triumph-daytona-675r-2011-fold-up-brake-lever--remote-span-adjuster-12500-p.asp",
+          "selector": "#_EKM_PRODUCTPRICE",
+          "company": {
+            "id": 1,
+            "name": "Lightech"
+          }
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": 2,
+      "name": "Sony a6400 16-55mm",
+      "active": true,
+      "urls": [
+        {
+          "id": 2,
+          "url": "https://www.bestbuy.com/site/sony-alpha-a6400-mirrorless-camera-with-e-pz-16-50mm-f-3-5-5-6-oss-lens-black/6324858.p?skuId=6324858",
+          "selector": ".priceView-hero-price.priceView-customer-price span",
+          "company": {
+            "id": 2,
+            "name": "Best Buy"
+          }
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": 3,
+      "name": "Bell Pro Star Helmet",
+      "active": true,
+      "urls": [
+        {
+          "id": 3,
+          "url": "https://www.sportbiketrackgear.com/bell-pro-star-solid-helmet-matte-black/",
+          "selector": ".price--withoutTax",
+          "company": {
+            "id": 3,
+            "name": "Sportbike Track Gear"
+          }
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": 5,
+      "name": "Belkin Recessed Charger",
+      "active": true,
+      "urls": [
+        {
+          "id": 5,
+          "url": "https://www.belkin.com/us/p/B2B180/",
+          "selector": ".del-red",
+          "company": {
+            "id": 5,
+            "name": "Belkin"
+          }
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": 6,
+      "name": "Zwilling 8-Pc Knife Set",
+      "active": true,
+      "urls": [
+        {
+          "id": 6,
+          "url": "https://www.zwilling.com/us/zwilling-four-star-anniversary-8-pc-knife-block-set-35065-700/35065-700-0.html?cgid=our-brands_zwilling_cutlery_four-star",
+          "selector": ".product-sales-price.price-sales",
+          "company": {
+            "id": 6,
+            "name": "Zwilling"
+          }
+        }
+      ],
+      "history": []
+    }
+  ]
+}
