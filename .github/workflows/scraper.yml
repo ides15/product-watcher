@@ -2,8 +2,8 @@ name: scraper
 
 on:
   repository_dispatch:
-  schedule:
-    - cron: "0 */12 * * *"
+  # schedule:
+  #   - cron: "0 */12 * * *"
 
 jobs:
   product-watcher:
@@ -14,5 +14,5 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Docker build and run
-        uses: .
+        uses: ./
         id: product-watcher
